@@ -23,8 +23,9 @@ jobs:
           npm ci --legacy-peer-deps
           npm run build-storybook
 
-      - name: Deploy
-        uses: JamesIves/github-pages-deploy-action@3.6.2
+      - name: Deploy to Github Pages
+        uses: actions/deploy-pages@v1
         with:
           branch: gh-pages
           folder: storybook-static
+          token: ${{ github.token }}
