@@ -6,6 +6,9 @@ on:
     branches:
       - main
 
+  # Allows you to run this workflow manually from the Actions tab
+  workflow_dispatch:
+
 permissions:
   contents: read
   pages: write
@@ -13,19 +16,25 @@ permissions:
 
 jobs:
   build-and-deploy:
+    environment:
+      name: github-pages
+      url: ${{ steps.deployment.outputs.page_url }}
     runs-on: ubuntu-latest
     steps:
       - name: Checkout
-        uses: actions/checkout@v2.3.1
-
+        uses: actions/checkout@v3
+      - name: Setup Pages
+        uses: actions/configure-pages@v3
+      - name: Upload artifact
+        uses: actions/upload-pages-artifact@v2
+        with:
+          path: '.'
+      - name: Deploy to GitHub Pages
+        id: deployment
+        uses: actions/deploy-pages@v2
+        with:
+          folder: './storybook-static'
       - name: Install and Build
         run: |
           npm ci --legacy-peer-deps
           npm run build-storybook
-
-      - name: Deploy to Github Pages
-        uses: actions/deploy-pages@v1
-        with:
-          branch: gh-pages
-          folder: storybook-static
-          token: ${{ github.token }}
