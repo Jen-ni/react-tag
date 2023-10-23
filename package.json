@@ -7,7 +7,7 @@
   "types": "lib/es/types/index.d.ts",
   "homepage": "http://Jen-ni.github.io/react-tag",
   "scripts": {
-    "build-storybook": "build-storybook",
+    "build-storybook": "storybook build",
     "build": "rollup -c",
     "lint:fix": "eslint src --quiet --fix",
     "lint": "eslint src",
