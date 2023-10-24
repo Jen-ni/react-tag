@@ -5,7 +5,6 @@
   "main": "lib/es/index.js",
   "module": "lib/es/index.js",
   "types": "lib/es/types/index.d.ts",
-  "homepage": "http://Jen-ni.github.io/react-tag",
   "scripts": {
     "build-storybook": "storybook build",
     "build": "rollup -c",

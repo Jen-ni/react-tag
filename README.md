@@ -14,6 +14,10 @@ Storybook also has up to date docs and API description for this component.
 npm install react-tag
 ```
 
+## Demo
+
+Open [demo](http://Jen-ni.github.io/react-tag/storybook-static)
+
 ## Code example
 
 ```tsx

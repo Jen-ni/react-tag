@@ -11,7 +11,7 @@ export default [
       {
         file: packageJson.main,
         format: 'es',
-        sourcemap: 'inline',
+        sourcemap: true,
         name: packageJson.name,
         interop: 'compat',
       },

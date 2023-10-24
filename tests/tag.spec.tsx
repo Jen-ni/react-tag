@@ -2,7 +2,7 @@ import React from 'react';
 import '@testing-library/jest-dom';
 import { fireEvent, render, screen } from '@testing-library/react';
 
-import { TagContainer } from '../containers/tag.container';
+import { TagContainer } from '../src/containers/tag.container';
 
 const TestComponent = (props) => <TagContainer {...props} />;
 
